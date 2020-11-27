@@ -51,8 +51,8 @@ public class ProductController {
     	model.addAttribute(product);
 */
 
-    	Category category = categoryService.getCategory(product.getCategory().getId());
-        product.setCategory(category);
+//    	Category category = categoryService.getCategory(product.getCategory().getId());
+//        product.setCategory(category);
 
     	productService.save(product);
     	
