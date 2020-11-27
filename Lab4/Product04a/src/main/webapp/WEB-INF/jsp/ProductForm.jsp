@@ -16,7 +16,9 @@
         <p>
             <label for="category"><spring:message code="product.category" />
             </label>
-            <form:select id="category" path="category.id" items="${categories}"
+<%--            <form:select id="category" path="category.id" items="${categories}"--%>
+<%--                         itemLabel="name" itemValue="id" />--%>
+            <form:select id="category" path="category" items="${categories}"
                          itemLabel="name" itemValue="id" />
         </p>
          
