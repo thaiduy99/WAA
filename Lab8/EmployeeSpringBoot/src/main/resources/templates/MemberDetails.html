@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Form</title>
+    <link href="css/main.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/main.css}" href="../css/main.css" />
+</head>
+<body>
+<div id="global">
+    <h4>The Member details have been saved.</h4>
+    <p>
+        <h5><span th:text="#{details}">Details: </span></h5>
+        <span th:text="#{addEmployee.form.firstName.label}">First Name: </span><span th:text="${member.firstName}"></span><br/>
+        <span th:text="#{addEmployee.form.lastName.label}">Lastname: </span><span th:text="${member.lastName}"></span><br/>
+        <span th:text="#{addMember.form.age.label}">Date of birth: </span><span th:text="${member.age}"></span>
+    </p>
+</div>
+</body>
+</html>

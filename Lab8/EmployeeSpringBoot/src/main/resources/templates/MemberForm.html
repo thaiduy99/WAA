@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+	<meta charset="UTF-8">
+	<title>Employee Form</title>
+	<link href="css/main.css" type="text/css" rel="stylesheet">
+	<link rel="stylesheet" th:href="@{/css/main.css}" href="../css/main.css" />
+</head>
+<body>
+	<div id="global">
+		<form action="#" th:action="@{/member/member_input}" th:object="${member}" method="post">
+			<fieldset>
+				<legend><span th:text="#{addEmployee}">Add an Employee</span></legend>
+				<ul th:if="${#fields.hasErrors('*')}">
+					<li th:each="err : ${#fields.errors('*')}" th:text="${err}" >Input
+						is incorrect</li>
+				</ul>
+				<p>
+					<label for="firstName"><span th:text="#{addEmployee.form.firstName.label}">First Name: </span></label>
+					<input type="text" th:field="*{firstName}" />
+					<p th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}" th:errorclass="fieldError">Incorrect data</p>
+				</p>
+				<p>
+					<label for="lastName"><span th:text="#{addEmployee.form.lastName.label}">Last Name: </span></label>
+					<input type="text" th:field="*{lastName}" />
+					<p th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}" th:errorclass="fieldError">Incorrect data</p>
+				</p>
+
+				<p>
+					<label for="memberNumber"><span th:text="#{addMember.form.number.label}">Member Number: </span></label>
+					<input type="text" th:field="*{memberNumber}"/>
+					<p th:if="${#fields.hasErrors('memberNumber')}" th:errors="*{memberNumber}" th:errorclass="fieldError">Incorrect data</p>
+				</p>
+				<p>
+					<label for="age"><span th:text="#{addMember.form.age.label}">Age: </span></label>
+					<input type="text" th:field="*{age}"/>
+					<p th:if="${#fields.hasErrors('age')}" th:errors="*{age}" th:errorclass="fieldError">Incorrect data</p>
+				</p>
+				<p id="buttons">
+					<input id="reset" type="reset" th:value="#{addMember.form.button.reset}" value="Reset" tabindex="4"> <input
+						id="submit" type="submit" tabindex="5" th:value="#{addMember.form.button.add}" value="Add Member">
+				</p>
+			</fieldset>
+		</form>
+	</div>
+</body>
+</html>
