@@ -57,7 +57,12 @@ public class EmployeeController {
 	@PostMapping(value = { "search_employee" })
 	public String search(@Param("search") String number, Model model) {
 		Employee emp = empService.getEmployeeByNumber(Integer.parseInt(number));
-		model.addAttribute("employee", emp);
-		return "EmployeeDetails";
+
+		if (emp != null) {
+			model.addAttribute("employee", emp);
+			return "EmployeeDetails";
+		}
+
+		return "SearchEmployeeForm";
 	}
 }
