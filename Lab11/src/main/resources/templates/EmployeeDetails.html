@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Form</title>
+    <link href="css/main.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" th:href="@{/css/main.css}" href="../css/main.css" />
+</head>
+
+<body>
+<div id="global">
+    <h4>The employee details have been saved.</h4>
+    <p>
+        <h5>Details:</h5>
+        <span th:text="#{addEmployee.form.number.label}">Number: </span><span th:text="${employee.number}"></span><br/>
+        <span th:text="#{addEmployee.form.firstName.label}">First Name: </span><span th:text="${employee.firstname}"></span><br/>
+        <span th:text="#{addEmployee.form.lastName.label}">Last Name: </span><span th:text="${employee.lastname}"></span><br/>
+        <span th:text="#{addEmployee.form.dateOfBirth.label}">Date of birth: </span><span th:text="${employee.birthdate}"></span> <br/>
+        <span th:text="#{addEmployee.form.street.label}">Date of birth: </span><span th:text="${employee.address.street}"></span> <br/>
+        <span th:text="#{addEmployee.form.city.label}">Date of birth: </span><span th:text="${employee.address.city}"></span> <br/>
+        <span th:text="#{addEmployee.form.state.label}">Date of birth: </span><span th:text="${employee.address.state}"></span> <br/>
+        <span th:text="#{addEmployee.form.zip.label}">Date of birth: </span><span th:text="${employee.address.zipcode}"></span> <br/>
+
+
+        <a th:href="@{/search_employeeform}" th:text="#{searchEmployee}"></a>
+    </p>
+</div>
+
+</body>
+
+</html>

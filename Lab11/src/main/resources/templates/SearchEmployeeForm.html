@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org/">
+<head>
+<meta charset="UTF-8">
+<title>Employee Form</title>
+<link href="css/main.css" type="text/css" rel="stylesheet">
+<link rel="stylesheet" th:href="@{/css/main.css}" href="../css/main.css" />
+</head>
+<body>
+
+	<div id="global">
+		<section>
+			<div class="pull-right" style="padding-right:50px">
+				<a href="?lang=en">English</a>|<a href="?lang=fr_FR">France</a>
+			</div>
+		</section>
+		<form action="#" th:action="@{/search_employee}" method="post">
+			<fieldset>
+				<legend><span th:text="#{searchEmployee}">Search Employee</span></legend>
+				<p>
+					<label for="number"><span data-th-text="#{addEmployee.form.number.label}">Number</span></label>
+					<input type="text" name="number" id = "number"/>
+				</p>
+				<p id="buttons">
+					<input id="reset" type="reset" th:value="#{addEmployee.form.button.reset}" value="Reset" tabindex="4">
+					<input id="submit" type="submit" th:value="#{search}">
+				</p>
+			</fieldset>
+		</form>
+	</div>
+</body>
+</html>
